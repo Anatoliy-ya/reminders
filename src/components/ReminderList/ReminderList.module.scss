@@ -1,0 +1,33 @@
+@import '../../styles/index.scss';
+
+.reminderList {
+  display: flex;
+  flex-direction: column;
+  gap: $unit;
+  background-color: $background;
+  border: 1px solid $border-color;
+  padding: $unit;
+  border-radius: 8px;
+}
+
+.filterButtons {
+  display: flex;
+  justify-content: center;
+  gap: $unit-half;
+
+  .active {
+    background-color: $success-color;
+    color: white;
+  }
+}
+.noReminders {
+  text-align: center;
+  color: mix(black, $primary, 10%);
+}
+
+@media screen and (max-width: 768px) {
+  .reminderList {
+    border: none;
+    padding: $unit-half;
+  }
+}

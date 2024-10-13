@@ -1,0 +1,83 @@
+@import '../../styles/index.scss';
+
+.reminderItemEditable {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  background-color: $background;
+  padding: $unit;
+  border: 1px solid $border-color;
+  border-radius: $unit-quarter;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.reminderFormEditable {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+
+  label {
+    margin-bottom: $unit-quarter;
+    font-weight: bold;
+  }
+
+  .descriptionInput,
+  .dueDateInput {
+    border: 1px solid $border-color;
+    border-radius: $unit-quarter;
+    width: 31rem;
+    padding: $unit-quarter;
+  }
+}
+
+.reminderActions {
+  display: flex;
+  gap: $unit-half;
+  margin-top: $unit-half;
+
+  .btn {
+    background-color: $primary;
+    color: white;
+    border: none;
+    padding: $unit-half $unit;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: mix(black, $primary, 10%);
+    }
+
+    &.saveBtn {
+      background-color: $success-color;
+
+      &:hover {
+        background-color: mix(black, $success-color, 10%);
+      }
+    }
+
+    &.cancelBtn {
+      background-color: $error-color;
+
+      &:hover {
+        background-color: mix(black, $error-color, 10%);
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .reminderItemEditable {
+    flex-direction: column;
+  }
+
+  .reminderFormEditable {
+    .descriptionInput,
+    .dueDateInput {
+      width: 100%;
+    }
+  }
+}

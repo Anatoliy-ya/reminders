@@ -1,0 +1,91 @@
+@import '../../styles/index.scss';
+
+.reminderItem {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $background;
+  border: 1px solid $border-color;
+  padding: $unit;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+
+  &:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  &.completed {
+    background-color: $background-gray;
+  }
+}
+
+.reminderFormEditable {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.reminderInfo {
+  h4 {
+    font-size: $font-size-base;
+    color: $text-color;
+    margin-bottom: $unit-quarter;
+  }
+
+  p {
+    font-size: $font-size-sm;
+    color: mix(black, $text-color, 20%);
+  }
+}
+
+.reminderActions {
+  display: flex;
+  gap: $unit-half;
+
+  .btn {
+    background-color: $primary;
+    color: white;
+    border: none;
+    padding: $unit-half $unit;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: mix(black, $primary, 10%);
+    }
+
+    &.completeBtn {
+      background-color: $success-color;
+
+      &:hover {
+        background-color: mix(black, $success-color, 10%);
+      }
+    }
+
+    &.editBtn {
+      background-color: $accent-color;
+
+      &:hover {
+        background-color: mix(black, $accent-color, 10%);
+      }
+    }
+
+    &.deleteBtn {
+      background-color: $error-color;
+
+      &:hover {
+        background-color: mix(black, $error-color, 10%);
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .reminderItem {
+    flex-direction: column;
+    gap: $unit-half;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+}

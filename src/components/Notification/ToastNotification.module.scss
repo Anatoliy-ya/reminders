@@ -1,0 +1,30 @@
+.toast {
+  position: fixed;
+  text-align: center;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px 20px;
+  background-color: #323232;
+  color: #fff;
+  border-radius: 4px;
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 99;
+}
+
+.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+.hide {
+  opacity: 0;
+  transform: translateX(-50%) translateY(20px);
+}
+
+@media screen and (max-width: 768px) {
+  .toast {
+    width: 90%;
+  }
+}

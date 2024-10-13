@@ -1,0 +1,121 @@
+@import '../../styles/index.scss';
+
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 800px;
+  width: 100%;
+}
+
+.reminderItem {
+  display: flex;
+  background-color: $background;
+  border: 1px solid $border-color;
+  padding: $unit;
+  border-radius: 8px;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+
+  &:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  &.completed {
+    background-color: $background-gray;
+  }
+}
+
+.actions {
+  display: flex;
+  gap: 10px;
+}
+
+.closeButton {
+  margin-top: 20px;
+}
+
+.btn {
+  background-color: $primary;
+  color: white;
+  border: none;
+  padding: $unit-half $unit;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: mix(black, $primary, 10%);
+  }
+
+  &.completeBtn {
+    background-color: $success-color;
+
+    &:hover {
+      background-color: mix(black, $success-color, 10%);
+    }
+  }
+
+  &.editBtn {
+    background-color: $accent-color;
+
+    &:hover {
+      background-color: mix(black, $accent-color, 10%);
+    }
+  }
+
+  &.snoozeBtn {
+    background-color: $error-color;
+
+    &:hover {
+      background-color: mix(black, $error-color, 10%);
+    }
+  }
+}
+
+.notificationButton {
+  position: relative;
+  border: 2px solid $primary;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+
+  img {
+    position: absolute;
+  }
+
+  &:hover {
+    background-color: mix(black, $primary, 10%);
+    transition: background-color 0.3s ease;
+  }
+
+  .notificationCount {
+    color: red;
+    font-weight: 900;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .reminderItem {
+    flex-direction: column;
+    align-items: center;
+    gap: $unit-half;
+  }
+}

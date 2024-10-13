@@ -1,0 +1,24 @@
+@import '../../styles/index.scss';
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: $unit;
+  margin: $unit;
+  position: relative;
+}
+
+.headerButtons {
+  width: 100%;
+}
+
+.headerForm {
+  padding-top: $unit;
+  width: 100%;
+}
+
+.headerNotification {
+  position: absolute;
+  right: 0;
+  top: 0;
+}

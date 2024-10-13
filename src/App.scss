@@ -1,0 +1,30 @@
+@import './styles/index.scss';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#is-service-frame {
+  display: none;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  color: $text-color;
+  background-color: $background;
+  line-height: 1.6;
+  margin: 3rem auto;
+  max-width: 1200px;
+}
+
+.openReminderForm {
+  margin: 1rem;
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    margin: 1rem auto;
+  }
+}

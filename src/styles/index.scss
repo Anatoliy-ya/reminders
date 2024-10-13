@@ -1,0 +1,27 @@
+// Цветовая палитра
+$primary: #7ad7f0; // Основной цвет
+$secondary: #34495e; // Второстепенный цвет
+$text-color: #34495e; // Основной цвет текста
+$background: #ffffff; // Основной цвет фона
+$border-color: #e0e0e0; // Основной цвет границ
+$accent-color: #fede5d; // Акцентный цвет
+$error-color: #e74c3c; // Основной цвет ошибки
+$success-color: #2ecc71; // Основной цвет успеха
+$background-gray: #d5d5d5; // Второстепенный цвет фона
+$hover-color: #37d1f0;
+
+// Размеры и отступы
+$unit-quarter: 0.25rem; // 4px если базовый размер шрифта 16px
+$unit-half: 0.5rem; // 8px
+$unit-three-quarters: 0.75rem; // 12px
+$unit: 1rem; // 16px
+$unit-and-half: 1.5rem; // 24px
+$double2: 2rem; // 32px
+
+// Пример использования переменных для размеров шрифтов
+$font-size-lg: 1.25rem; // 20px
+$font-size-base: 1rem; // 16px
+$font-size-sm: 0.875rem; // 14px
+$font-size-xs: 0.75rem; // 12px
+
+// Базовые глобальные стили для приложения
