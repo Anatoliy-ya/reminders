@@ -1,5 +1,6 @@
 {
   "name": "reminder",
+  "homepage": "https://anatoliy-ya.github.io/reminders/",
   "private": true,
   "version": "0.0.0",
   "type": "module",
