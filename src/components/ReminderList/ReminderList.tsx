@@ -13,6 +13,7 @@ import {
   toggleNotification,
 } from '../../store/reminders/overdueRemindersSlice';
 import { editReminder, deleteReminder, toggleComplete } from '../../store/reminders/remindersSlice';
+import Input from '../../UI/Input';
 
 interface ReminderListProps {
   reminders: Reminder[];
@@ -26,6 +27,7 @@ const ReminderList: React.FC<ReminderListProps> = ({ reminders }) => {
   const filterStatus = useSelector((state: RootState) => state.reminders.filterStatus);
   const [showNotificationMessage, setShowNotificationMessage] = useState(false);
   const [notificationMessage, setNotificationMessage] = useState('');
+  const [searchTerm, setSearchTerm] = useState('');
   // Логика воркера для показа напоминаний в модальном окне
   useReminderWorker(reminders, (_dueReminders) => {
     dispatch(toggleNotification(true));
@@ -79,8 +81,12 @@ const ReminderList: React.FC<ReminderListProps> = ({ reminders }) => {
         }
         return true; // Показываем все, если фильтр сброшен
       })
+      .filter((reminder) => {
+        // Фильтрация по строке поиска
+        return reminder.description.toLowerCase().includes(searchTerm.toLowerCase());
+      })
       .sort((a, b) => new Date(a.dueDate).getTime() - new Date(b.dueDate).getTime());
-  }, [reminders, filterStatus]);
+  }, [reminders, filterStatus, searchTerm]);
 
   // Логика для фильтрации (повторное нажатие сбрасывает фильтр)
   const toggleFilter = (status: 'pending' | 'completed') => {
@@ -104,6 +110,14 @@ const ReminderList: React.FC<ReminderListProps> = ({ reminders }) => {
           className={filterStatus === 'completed' ? styles.active : ''}>
           Выполненные
         </Button>
+        <Input
+          id="search"
+          type="text"
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+          placeholder="Поиск по описанию..."
+          className={styles.searchInput}
+        />
       </div>
 
       {/* Список напоминаний после фильтрации */}

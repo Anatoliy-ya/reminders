@@ -12,14 +12,26 @@
 
 .filterButtons {
   display: flex;
+  flex-direction: row;
   justify-content: center;
   gap: $unit-half;
+  position: relative;
 
   .active {
     background-color: $success-color;
     color: white;
   }
+
+  .searchInput {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: $unit-quarter;
+    border: 2px solid $border-color;
+    border-radius: $unit-quarter;
+  }
 }
+
 .noReminders {
   text-align: center;
   color: mix(black, $primary, 10%);
@@ -29,5 +41,16 @@
   .reminderList {
     border: none;
     padding: $unit-half;
+  }
+
+  .filterButtons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .searchInput {
+      position: relative;
+    }
   }
 }
